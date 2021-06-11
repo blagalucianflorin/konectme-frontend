@@ -1,35 +1,39 @@
 import React from 'react';
 import {Button} from "./Button";
 import "./Login.css";
-
+import axios from "axios";
+import {Redirect} from "react-router-dom";
 class Login extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            message:''
+            message:'',
+            redirect: "false"
         };
     }
-
     onLoginUser=()=>{
         let userInfo={
             username:this.refs.username.value,
             password:this.refs.password.value
         };
-
-        fetch('http://127.0.0.1:8000/api/login',{
-            method:'Post',
-            headers:{'Content-type':'application/json'},
-            body:JSON.stringify(userInfo)
-        }).then(r=>r.json()).then(res=>{
-            if(res.token){
-                localStorage.setItem('token', res.token);
+        axios.post('api/login', userInfo)
+                .then(res=>{
+                    if (res.data.success){
+                localStorage.setItem('token', res.data.user.token);
+                localStorage.setItem('userid', res.data.user.id);
                 this.setState({message:"You are now logged in!"})
-            }
-            else {
-                this.setState({message:"Incorrect username or password"})
-            }
-        })
+                window.location.href="/api/profile";
+                    }
+                    else {
+                        this.setState({message:"Incorrect username or password"})
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                    this.setState({message:"Incorrect username or password"})
+                })
     }
+
     render(){
         return(
             <div className="y">

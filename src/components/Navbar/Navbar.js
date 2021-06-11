@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {MenuItems} from "./MenuItems";
+import {MenuItems2} from "./MenuItems2";
 import './Navbar.css';
 import {Button} from "../Button";
 
@@ -11,6 +12,8 @@ class Navbar extends Component{
     }
 
     render() {
+        
+        if (this.props.token){
         return(
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">KonectMe</h1>
@@ -18,7 +21,7 @@ class Navbar extends Component{
                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>_</i> 
                 </div>
                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-                {MenuItems.map((item, index) => {
+                {MenuItems2.map((item, index) => {
                     return(
                         <li key={index}><a className={item.cName} href={item.url}>
                             {item.title}
@@ -26,10 +29,31 @@ class Navbar extends Component{
                     )
                 })}
                 </ul>
-                <Button><a href="/api/login" className="a">Login</a></Button>
-                <Button><a href="/api/register" className="a">Sign Up</a></Button>
+                <Button><a href="/api/login" onClick={() => localStorage.clear()} className="a">Logout</a></Button>
         </nav>
         )
+        }
+        else {
+            return(
+                <nav className="NavbarItems">
+                    <h1 className="navbar-logo">KonectMe</h1>
+                    <div className="menu-icon" onClick={this.handleClick}>
+                        <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>_</i> 
+                    </div>
+                    <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
+                    {MenuItems.map((item, index) => {
+                        return(
+                            <li key={index}><a className={item.cName} href={item.url}>
+                                {item.title}
+                                </a></li>
+                        )
+                    })}
+                    </ul>
+                    <Button><a href="/api/login" className="a">Login</a></Button>
+                    <Button><a href="/api/register" className="a">Sign Up</a></Button>
+            </nav>
+            )
+        }
     }
 }
 

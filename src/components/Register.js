@@ -1,8 +1,10 @@
 import React from 'react';
 import {Button} from "./Button";
 import "./Register.css";
+import axios from "axios";
 
 class Register extends React.Component{
+
     constructor(props){
         super(props);
         this.state={
@@ -18,12 +20,7 @@ class Register extends React.Component{
             email:this.refs.email.value,
             password:this.refs.password.value
         };
-
-        fetch('http://127.0.0.1:8000/api/user',{
-            method:'Post',
-            headers:{'Content-type':'application/json'},
-            body:JSON.stringify(userInfo)
-        }).then(r=>r.json()).then(res=>{
+        axios.post('api/user',userInfo).then(res=>{
             if(res){
                 this.setState({message:"Your account has been created. Welcome to KonnectMe!"})
             }
