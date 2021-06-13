@@ -76,3 +76,7 @@ input {
     cursor: pointer;
     border-radius: 15px;
   }
+  .hrefs{
+    color: white;
+    text-decoration: none;
+  }

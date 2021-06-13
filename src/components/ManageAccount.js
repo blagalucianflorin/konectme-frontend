@@ -130,8 +130,7 @@ onDeleteUser=()=>{
             <p>Account created on: {this.state.created_at}</p>
             <br></br>
             <br></br>
-                <button class="deletebtn" onClick={this.onDeleteUser}>Delete account</button>
-    
+                <button class="deletebtn"><a className="hrefs" href='/api/deleteaccount'>Delete account</a></button>
     
             
           </div>
