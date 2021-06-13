@@ -21,8 +21,12 @@ class Register extends React.Component{
             password:this.refs.password.value
         };
         axios.post('api/user',userInfo).then(res=>{
-            if(res){
+            if(res.data.success){
                 this.setState({message:"Your account has been created. Welcome to KonnectMe!"})
+                window.location.href="/api/login";
+            }
+            else{
+                this.setState({message:"Could not create your account!"})
             }
         })
     }

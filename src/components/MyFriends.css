@@ -77,8 +77,24 @@ input {
     border-radius: 15px;
   }
   .photo{
-      width: 20em;
-      height: 20em;
+      width: 5em;
+      height: 5em;
+  }
+
+  .smallbutton {
+    background-color: rgb(110, 94, 254);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 12px;
+    margin: 4px 10px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
   }
   @media screen and (max-width: 960px) {
     .NavbarItems{
@@ -158,8 +174,8 @@ input {
         transition: 250ms;
     }
     .photo{
-      width: 15em;
-      height: 15em;
+      width: 3em;
+      height: 3em;
     }
     Button {
         display: none;

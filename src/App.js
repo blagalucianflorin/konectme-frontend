@@ -6,6 +6,8 @@ import Register from './components/Register';
 import Login from './components/Login';
 import NameForm from './components/ManageAccount';
 import Profile from './components/Profile';
+import DeleteForm from './components/DeleteAccount';
+import MyFriends from './components/MyFriends';
 import { Component } from 'react';
 
 export default class App extends Component {
@@ -28,6 +30,8 @@ export default class App extends Component {
         <Switch>
         <Route path="/api/account" exact component={() => <NameForm token={this.state.token} userid={this.state.userid}/>}/>
         <Route path="/api/profile" exact component={() => <Profile token={this.state.token} userid={this.state.userid}/>}/>
+        <Route path="/api/deleteaccount" exact component={() => <DeleteForm token={this.state.token} userid={this.state.userid}/>}/>
+        <Route path="/api/friends" exact component={() => <MyFriends token={this.state.token} userid={this.state.userid}/>}/>
         <Route path="/api/register" exact component={Register}/>
         <Route path="/api/login" exact component={Login}/>
         </Switch>

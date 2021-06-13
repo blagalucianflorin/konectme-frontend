@@ -1,0 +1,63 @@
+h1 {
+  color: #6568f4;
+}
+
+p {
+  color: #6568f4;
+}
+
+#feedback-main {
+  text-align: center;
+}
+
+#feedback-comment {
+  height: 100px;
+  width: 50%;
+  max-height: 7000000000000%;
+  border-radius: 12px;
+  border-color: #6568f4;
+}
+
+#feedback-button-blue {
+  border-radius: 12px;
+  background-color: #6568f4;
+  color: white;
+  height: 50px;
+  margin: none;
+  border-color: #6568f4;
+}
+
+#feedback-button-blue:hover {
+  background-color: #3acbf7;
+}
+#feedback-button-blue:focus {
+  outline-width: 0;
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+#feedback-div p {
+  padding: 30px;
+}
+
+.deletebtn{
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.redtext{
+  color: red;
+}
