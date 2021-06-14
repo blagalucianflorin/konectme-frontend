@@ -37,7 +37,7 @@ class ChatBody extends Component {
         console.log(info)
         axios.post('api/message', 
         {sender_id: this.props.userid,
-            chat_id:  localStorage.getItem("chatid"),
+            chat_id:  this.props.chatid,
             content: this.refs.messcontent.value,
             type : "text",
             expiry_time : "10"})
