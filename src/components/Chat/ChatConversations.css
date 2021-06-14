@@ -1,0 +1,39 @@
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 10px;
+  }
+.yy {
+    background: white;
+    border-top: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0;
+    width: 97%;
+    left: 2%;
+    position: relative;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+    .yy .labels {
+    color: rgb(110, 94, 254);
+  }
+  
+  .yy input {
+    border-radius: 10px;
+  }
+  
+  .yy h2 {
+    color: rgb(110, 94, 254);
+  }
+  
+  .yy {
+    border: 10px solid rgb(110, 94, 254);
+  }

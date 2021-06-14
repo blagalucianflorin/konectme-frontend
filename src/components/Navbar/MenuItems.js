@@ -10,6 +10,11 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
+        title: 'Add Friends',
+        url: '/api/addfriends',
+        cName: 'nav-links'
+    },
+    {
         title: 'My Friends',
         url: '/api/friends',
         cName: 'nav-links'
