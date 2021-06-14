@@ -17,18 +17,30 @@ class ChatBody extends Component {
     {
         axios.get('api/chat/' + this.props.chatid).then(res => {
             if (res.data.messages){
-                console.log(res.data)
                 this.setState({messages: res.data.messages})
             }
             else{
                 console.log(res.data)
             }
         })
+        this.interval = setInterval(() => axios.get('api/chat/' + this.props.chatid).then(res => {
+          if (res.data.messages){
+              this.setState({messages: res.data.messages})
+          }
+          else{
+              console.log(res.data)
+          }
+      }), 2000);
+    
+    }
+
+    componentWillUnmount() {
+      clearInterval(this.interval);
     }
 
     AddMessage = () => {
         let info = {
-            sender_id: this.props.userid,
+          sender_id: this.props.userid,
             chat_id:  this.props.chatid,
             content: this.refs.messcontent.value,
             type : "text",
@@ -36,8 +48,8 @@ class ChatBody extends Component {
         }
         console.log(info)
         axios.post('api/message', 
-        {sender_id: this.props.userid,
-            chat_id:  this.props.chatid,
+        {sender_id: localStorage.getItem('userid'),
+            chat_id:  localStorage.getItem('chatid'),
             content: this.refs.messcontent.value,
             type : "text",
             expiry_time : "10"})
@@ -53,7 +65,6 @@ class ChatBody extends Component {
                 console.log(err);
                 this.setState({message:"Sorry! Could not update information. Try again later!"})
             })
-        window.location.href="/api/chat";
     }
     
     render () {

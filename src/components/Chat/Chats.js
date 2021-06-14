@@ -16,14 +16,6 @@ class Chats extends React.Component {
 
     startChat = () => {
         localStorage.setItem('chatid', this.props.chat.id);
-        axios.get('api/chat/' + this.props.chat.id).then(res => {
-            if (res.data){
-                this.setState({messages: res.data.messages})
-            }
-            else{
-                console.log(res.data)
-            }
-        })
         window.location.href="/api/chat";
     }
     render(){
@@ -32,7 +24,7 @@ class Chats extends React.Component {
                 <div className = 'yyy'>
                     <div>
                                 <br></br>
-                                <button className="chatbutton" onClick={this.startChat}>{this.props.chat.name}</button>
+                                <button className="chatbutton" onClick={this.startChat}>{this.props.chat.id}</button>
                                 <br></br>
                                 <br></br>
                         </div>
