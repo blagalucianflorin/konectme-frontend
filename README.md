@@ -10,6 +10,6 @@
 
 Design Patterns 
 
-[Stateless component] (https://github.com/konectme/konectme-frontend/blob/master/src/components/Button.js)
-[Conditional Rendering] (https://github.com/konectme/konectme-frontend/blob/master/src/components/Chat/ChatBody.js)
-[Singleton] (https://github.com/konectme/konectme-frontend/tree/master/src/components/Navbar)
+[Stateless component](https://github.com/konectme/konectme-frontend/blob/master/src/components/Button.js)
+[Conditional Rendering](https://github.com/konectme/konectme-frontend/blob/master/src/components/Chat/ChatBody.js)
+[Singleton](https://github.com/konectme/konectme-frontend/tree/master/src/components/Navbar)
